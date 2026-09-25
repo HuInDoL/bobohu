@@ -46,3 +46,8 @@
 - 추가: troubleshooting/2026-09-25-generated-password-in-log.md
 - 수정: troubleshooting/README.md, tech/spring-security.md
 - 확인: 테스트 통과(Testcontainers, PostgreSQL 18.6), 로컬 실행 시 health 200, 그 외 경로 403
+
+## [2026-09-25] feature | 시설 테이블 설계와 엔티티 구현 (보육원 지도 1~3단계)
+- 추가: data-model.md (facility 테이블 설계, 좌표와 시간 타입 선택 이유)
+- 구현: V1__create_facility.sql, Facility, FacilityType, FacilityRepository, BaseTimeEntity, JpaConfig, 테스트 7개
+- 수정: tech/flyway.md, architecture.md (저장소 구조), features/orphanage-map.md, index.md
