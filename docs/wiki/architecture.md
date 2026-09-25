@@ -62,7 +62,11 @@ bobohu/
 │   ├── .env.example   # 로컬 비밀 정보 형식 (.env는 git 제외)
 │   └── src/main/java/com/bobohu/
 │       ├── BobohuServerApplication.java
-│       └── common/config/SecurityConfig.java
+│       ├── common/
+│       │   ├── config/    # SecurityConfig, JpaConfig
+│       │   └── domain/    # BaseTimeEntity (생성, 수정 시각)
+│       └── facility/
+│           └── domain/    # Facility, FacilityType, FacilityRepository
 ├── android/           # Android 앱 (예정)
 └── web/               # 웹 (예정)
 ```
