@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.SecurityFilterChain;
 
 /**
@@ -28,4 +30,14 @@ public class SecurityConfig {
 		return http.build();
 	}
 
+	/**
+	 * Spring Boot가 기본 계정을 만들고 비밀번호를 로그에 출력하지 않게 막는다.
+	 * 회원 인증을 구현하면 실제 사용자 조회 로직으로 바꾼다.
+	 */
+	@Bean
+	UserDetailsService userDetailsService() {
+		return username -> {
+			throw new UsernameNotFoundException(username);
+		};
+	}
 }
