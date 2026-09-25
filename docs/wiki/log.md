@@ -27,3 +27,7 @@
 ## [2026-09-25] feature | 세부 정보는 시설 담당자가 직접 입력하는 구조로 결정
 - 추가: features/facility-management.md (역할, 담당자 인증, 입력 항목, 아동 개인정보 원칙)
 - 수정: data-sources.md (공공데이터는 초기 목록으로만 사용), features/ai-search.md (필요한 데이터 출처), overview.md, index.md
+
+## [2026-09-25] setup | 아키텍처 문서 뼈대 추가, 서비스 목적과 보안 원칙 명시
+- 추가: architecture.md (시스템 구성도, 모듈러 모놀리스 계획, 주요 흐름, 보안 아키텍처, 미정 사항)
+- 수정: overview.md (목적: 정보 제공, 물품과 금전 후원, 보안 최우선 / 로드맵에 후원 추가), CLAUDE.md (보안 원칙, architecture.md 갱신 규칙), index.md
