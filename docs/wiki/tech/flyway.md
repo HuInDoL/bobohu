@@ -13,6 +13,8 @@
 ## 이 프로젝트에서 사용한 방법
 - **버전**: Spring Boot 4.1이 관리하는 버전
 - **위치**: `server/src/main/resources/db/migration/`
+- **적용된 마이그레이션**
+  - `V1__create_facility.sql`: 시설 테이블. 설계는 [데이터 모델](../data-model.md) 참고
 - **JPA와의 역할 분담**: 스키마는 Flyway로만 바꾼다. JPA는 `ddl-auto: validate`로 엔티티와 스키마가 맞는지 **검증만** 한다.
 - **왜**: `ddl-auto: update`는 JPA가 테이블을 알아서 바꿔 준다. 편하지만 컬럼을 지우거나 이름을 바꾸는 변경은 제대로 처리하지 못한다. 운영 DB에 무슨 변경이 적용됐는지 기록도 남지 않는다.
 
