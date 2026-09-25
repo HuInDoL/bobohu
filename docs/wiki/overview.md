@@ -1,0 +1,52 @@
+# 프로젝트 개요
+
+## 목표
+보육원 후원을 더 쉽고 간편하게 만든다. "이 세상 모든 아이들을 위해"
+
+## 개인 목표
+- 금융 IT 취업을 위한 포트폴리오로 쓴다.
+- Spring/Java 실력을 깊게 키운다.
+- 사용하는 기술마다 개념, 핵심, 트레이드오프, 대안을 정리한다.
+- 겪은 문제를 트러블슈팅 기록으로 남긴다.
+
+## 기술 스택
+Java/Spring 서버 하나에 Android 앱과 웹이 붙는 구조다. 서버는 JSON만 응답하는 REST API로 만든다.
+
+```
+[Android 앱: Kotlin + Compose] ──┐
+                                 ├──▶ [서버: Java 25 + Spring Boot 4.1] ──▶ PostgreSQL 18
+[웹: Next.js + React (예정)]   ──┘              │
+                                                ├──▶ 네이버 지도 Geocoding API
+                                                └──▶ LLM API (AI 검색, 예정)
+```
+
+| 영역 | 기술 | 선택 이유 |
+|---|---|---|
+| 서버 | [Java](tech/java.md) + [Spring Boot](tech/spring-boot.md) | 금융권 백엔드 표준, 핵심 역량 |
+| 앱 (메인) | [Kotlin](tech/kotlin.md) + [Jetpack Compose](tech/jetpack-compose.md) | Android 공식 표준. 금융권 앱도 네이티브가 기본 |
+| 웹 (MVP 이후) | Next.js (React) + Tailwind CSS | 상호작용이 많은 지도 화면을 매끄럽게 만들기 좋음 |
+| 지도 | [네이버 지도](tech/naver-maps.md) | 국내 사용자 친숙도와 데이터 정확도 |
+| DB | [PostgreSQL](tech/postgresql.md) 18 | pgvector로 RAG용 벡터 검색까지 한 DB에서 처리 |
+| AI (예정) | Spring AI + [Function Calling](tech/function-calling.md), [RAG](tech/rag.md) | Java/Spring 안에서 LLM 연동 |
+
+버전과 호환성은 [버전 및 호환성](versions.md)에 정리한다.
+
+## 주요 결정 기록
+- **Flutter, React Native 대신 Android 네이티브**: 금융 IT가 목표라 JVM 생태계로 일관되게 맞췄다. 금융권 앱도 네이티브가 기본이다. 대신 iOS는 지원하지 않는다.
+- **MySQL 대신 PostgreSQL**: 처음에는 채용 시장과 자료량 때문에 MySQL을 추천했다. 그런데 AI 검색(RAG) 계획이 생기면서 벡터 검색이 필요해졌다. MySQL 커뮤니티판은 벡터 검색을 지원하지 않는다. 경로 탐색은 DB가 아니라 네이버 Directions API가 맡으므로 DB 선택과 관계없다.
+- **AI는 LLM이 DB에 직접 접근하지 않는 구조**: Text-to-SQL 대신 Function Calling을 쓰고, 자유 텍스트는 RAG로 처리한다. 정확성과 보안을 우선한다.
+- **웹은 Thymeleaf 대신 React**: 지도 서비스는 상호작용이 많아서, 서버가 페이지를 통째로 다시 그리는 방식으로는 매끄러운 화면을 만들기 어렵다. 대신 배울 게 늘어나므로 MVP 이후로 미룬다.
+
+## 로드맵
+| 단계 | 내용 | 상태 |
+|---|---|---|
+| 1 (MVP) | [보육원 지도](features/orphanage-map.md): 서버 + Android 앱 | 계획 중 |
+| 2 | 웹 (Next.js) | 예정 |
+| 3 | [AI 보육원 검색](features/ai-search.md): Function Calling → RAG | 예정 |
+| 4 이후 | 후원 기능 등 점진적으로 고도화 | 미정 |
+
+## 미정 사항
+- 보육원 데이터 수집 방법: [보육원 데이터 출처](data-sources.md) 참고. 종교/재단 소속 정보의 출처 (확인 필요)
+- LLM, 임베딩 모델
+- 배포 환경
+- UI 디자인 방향 (코드 작성 전에 Figma로 먼저 설계)
