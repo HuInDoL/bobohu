@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: bobohu-server
+  jpa:
+    # 스키마는 Flyway 마이그레이션으로만 바꾼다. JPA는 엔티티와 스키마가 맞는지 검증만 한다
+    hibernate:
+      ddl-auto: validate
+    # 뷰 렌더링까지 DB 커넥션을 붙잡지 않게 한다 (REST API 서버라 필요 없음)
+    open-in-view: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      # 상세 정보(DB 상태 등)는 외부에 노출하지 않는다
+      show-details: never
