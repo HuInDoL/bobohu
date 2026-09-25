@@ -41,3 +41,8 @@
 - 보안 기본값: health 외 모든 요청 거부, 비밀 정보는 .env로 분리
 - 추가: tech/spring-security.md, tech/flyway.md, tech/docker-compose.md, tech/testcontainers.md
 - 수정: tech/spring-boot.md (주요 설정, Lombok 미사용), versions.md, architecture.md (저장소 구조 추가, 섹션 번호 변경), index.md
+
+## [2026-09-25] trouble | 기본 계정 비밀번호가 로그에 출력되는 문제 해결
+- 추가: troubleshooting/2026-09-25-generated-password-in-log.md
+- 수정: troubleshooting/README.md, tech/spring-security.md
+- 확인: 테스트 통과(Testcontainers, PostgreSQL 18.6), 로컬 실행 시 health 200, 그 외 경로 403
