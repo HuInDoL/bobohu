@@ -31,3 +31,7 @@
 ## [2026-09-25] setup | 아키텍처 문서 뼈대 추가, 서비스 목적과 보안 원칙 명시
 - 추가: architecture.md (시스템 구성도, 모듈러 모놀리스 계획, 주요 흐름, 보안 아키텍처, 미정 사항)
 - 수정: overview.md (목적: 정보 제공, 물품과 금전 후원, 보안 최우선 / 로드맵에 후원 추가), CLAUDE.md (보안 원칙, architecture.md 갱신 규칙), index.md
+
+## [2026-09-25] feature | 후원 기능 설계: 법적 검토와 직접 연결 방식
+- 추가: features/donation.md (기부금품법, 사회복지사업법 제45조 검토, A안 직접 연결 / B안 플랫폼 결제 보류, 원장 방식 투명성 기록)
+- 수정: architecture.md (후원 흐름을 A안과 B안으로 분리, 보안 표 갱신), overview.md, index.md
