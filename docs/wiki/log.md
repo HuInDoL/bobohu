@@ -23,3 +23,7 @@
 ## [2026-09-25] ingest | 보건복지부 아동복지시설 현황 CSV 분석
 - 추가: docs/raw/보건복지부_아동복지시설 현황_20221231.csv
 - 수정: data-sources.md (항목이 시설명과 주소뿐이고, 시설 유형 구분이 없으며, 주소 형식이 제각각임)
+
+## [2026-09-25] feature | 세부 정보는 시설 담당자가 직접 입력하는 구조로 결정
+- 추가: features/facility-management.md (역할, 담당자 인증, 입력 항목, 아동 개인정보 원칙)
+- 수정: data-sources.md (공공데이터는 초기 목록으로만 사용), features/ai-search.md (필요한 데이터 출처), overview.md, index.md

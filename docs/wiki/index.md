@@ -19,6 +19,7 @@ LLM이 질문에 답하거나 작업을 시작할 때 가장 먼저 읽는 페�
 
 ## 기능 (features/)
 - [보육원 지도](features/orphanage-map.md): 지도에 보육원 위치와 정보를 표시하는 MVP 기능 (계획 중)
+- [시설 담당자 정보 관리](features/facility-management.md): 담당자 인증과 세부 정보 입력, 아동 개인정보 원칙 (예정)
 - [AI 보육원 검색](features/ai-search.md): 자연어 질문 → 답변 + 보육원 목록. Function Calling → RAG 단계적 도입 (예정)
 
 ## 트러블슈팅
