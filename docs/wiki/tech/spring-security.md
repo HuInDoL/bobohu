@@ -19,6 +19,7 @@
   - **기본값은 거부**: `/actuator/health`만 허용하고 나머지는 모두 `denyAll()`이다. API를 하나 만들 때마다 명시적으로 열어야 한다. 실수로 보호되지 않은 API가 생기는 것을 막는다.
   - **STATELESS**: 서버 세션을 만들지 않는다. 앱이 주 클라이언트라서 토큰 방식을 전제로 한다.
   - **CSRF, HTTP Basic, 로그인 폼 비활성화**: REST API 서버라 필요 없다. 인증 방식을 정할 때 CSRF는 다시 검토한다.
+  - **빈 `UserDetailsService` 등록**: Spring Boot가 기본 계정을 만들고 비밀번호를 로그에 출력하는 것을 막는다.
 - 인증 방식(JWT 또는 세션)과 역할별 권한은 [아키텍처의 보안 설계](../architecture.md#63-인증과-인가)에 따라 추가한다.
 
 ## 트레이드오프
@@ -42,7 +43,7 @@
   - A. 허용 목록 방식이 안전하기 때문입니다. 새 API를 만들고 권한 설정을 잊어버려도 막힌 상태로 남습니다. 그래서 실수가 보안 사고로 이어지지 않습니다.
 
 ## 관련 트러블슈팅
-- 
+- [Spring Security가 기본 계정 비밀번호를 로그에 출력함](../../troubleshooting/2026-09-25-generated-password-in-log.md)
 
 ## 참고 자료
 - [Spring Security Reference](https://docs.spring.io/spring-security/reference/)
