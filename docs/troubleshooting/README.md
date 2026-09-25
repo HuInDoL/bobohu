@@ -5,3 +5,4 @@
 
 | 날짜 | 문제 | 관련 기술 |
 |---|---|---|
+| 2026-09-25 | [Spring Security가 기본 계정 비밀번호를 로그에 출력함](2026-09-25-generated-password-in-log.md) | [Spring Security](../wiki/tech/spring-security.md) |
