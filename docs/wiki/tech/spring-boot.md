@@ -21,7 +21,13 @@
 ## 이 프로젝트에서 사용한 방법
 - **버전**: 4.1.x. 선택 이유는 [버전 및 호환성](../versions.md#spring-boot-41)을 참고한다.
 - **역할**: Android 앱과 웹이 함께 쓰는 REST API 서버. 화면(HTML)은 만들지 않고 JSON만 응답한다. 그래야 웹 프론트엔드 기술을 나중에 무엇으로 정하든 서버를 고칠 필요가 없다.
-- **어디에 쓰는가**: 구현 후 경로 추가
+- **위치**: `server/` (Spring Initializr로 생성, Gradle Kotlin DSL)
+- **포함한 스타터**: Web MVC, Data JPA, Validation, Security, Actuator, Flyway, PostgreSQL 드라이버, Docker Compose 지원(개발용), Testcontainers(테스트용)
+- **주요 설정** (`server/src/main/resources/application.yml`)
+  - `spring.jpa.hibernate.ddl-auto: validate`: 스키마는 [Flyway](flyway.md)로만 바꾸고, JPA는 검증만 한다.
+  - `spring.jpa.open-in-view: false`: 기본값(true)이면 HTTP 요청이 끝날 때까지 DB 커넥션을 붙잡고 있다. 트래픽이 몰리면 커넥션이 모자랄 수 있다. 지연 로딩은 서비스 계층의 트랜잭션 안에서 끝낸다.
+  - Actuator는 `health`만 공개하고, 상세 정보는 숨긴다.
+- **Lombok을 쓰지 않는다**: Java의 `record`로 DTO를 간결하게 만들 수 있다. 컴파일 과정에 끼어드는 라이브러리 없이 순수 Java로 작성해서 코드가 실제로 무엇을 하는지 드러나게 한다.
 
 ## 트레이드오프
 | 장점 | 단점 |
