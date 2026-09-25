@@ -19,7 +19,8 @@ _설계 후 작성. 초안:_
 4. 앱이 네이버 지도에 마커를 표시하고, 마커를 누르면 정보를 보여준다.
 
 ## 구현 위치
-_구현 후 작성_
+- 테이블: `server/src/main/resources/db/migration/V1__create_facility.sql` ([데이터 모델](../data-model.md))
+- 엔티티: `server/src/main/java/com/bobohu/facility/domain/`
 
 ## 사용 기술
 - 서버: [Java](../tech/java.md), [Spring Boot](../tech/spring-boot.md)
