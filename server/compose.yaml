@@ -1,0 +1,12 @@
+# 로컬 개발용 DB. 앱을 실행하면 Spring Boot가 자동으로 띄운다(spring-boot-docker-compose).
+# 접속 정보는 .env 파일에서 읽는다. .env는 git에 올리지 않는다. .env.example을 복사해서 만든다.
+services:
+  postgres:
+    image: 'postgres:18'
+    environment:
+      - 'POSTGRES_DB=${POSTGRES_DB}'
+      - 'POSTGRES_USER=${POSTGRES_USER}'
+      - 'POSTGRES_PASSWORD=${POSTGRES_PASSWORD}'
+    ports:
+      # 내 PC(127.0.0.1)에서만 접속 가능. 호스트 포트는 비어 있는 포트로 자동 배정한다
+      - '127.0.0.1::5432'
