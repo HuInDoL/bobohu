@@ -35,3 +35,9 @@
 ## [2026-09-25] feature | 후원 기능 설계: 법적 검토와 직접 연결 방식
 - 추가: features/donation.md (기부금품법, 사회복지사업법 제45조 검토, A안 직접 연결 / B안 플랫폼 결제 보류, 원장 방식 투명성 기록)
 - 수정: architecture.md (후원 흐름을 A안과 B안으로 분리, 보안 표 갱신), overview.md, index.md
+
+## [2026-09-25] tech | Spring Boot 서버 프로젝트 생성
+- server/ 생성: Spring Boot 4.1.1, Java 25 (toolchain 자동 설치), Gradle 9.8.0, PostgreSQL 18 (Docker Compose, Testcontainers)
+- 보안 기본값: health 외 모든 요청 거부, 비밀 정보는 .env로 분리
+- 추가: tech/spring-security.md, tech/flyway.md, tech/docker-compose.md, tech/testcontainers.md
+- 수정: tech/spring-boot.md (주요 설정, Lombok 미사용), versions.md, architecture.md (저장소 구조 추가, 섹션 번호 변경), index.md
