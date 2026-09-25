@@ -51,3 +51,6 @@
 - 추가: data-model.md (facility 테이블 설계, 좌표와 시간 타입 선택 이유)
 - 구현: V1__create_facility.sql, Facility, FacilityType, FacilityRepository, BaseTimeEntity, JpaConfig, 테스트 7개
 - 수정: tech/flyway.md, architecture.md (저장소 구조), features/orphanage-map.md, index.md
+
+## [2026-09-25] setup | 구현 진행 방식 규칙 추가
+- 수정: CLAUDE.md (코드 리서치 → 구현 계획 → 피드백 → 구현, 단계별 md 파일은 docs/work/에 둔다)
