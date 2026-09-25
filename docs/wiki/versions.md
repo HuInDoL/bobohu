@@ -10,8 +10,11 @@
 |---|---|---|
 | Java (JDK) | **25** (LTS) | Spring Boot 4.1은 Java 17~26 지원 |
 | Spring Boot | **4.1.x** (Spring Framework 7.0.x) | Java 17 이상, Gradle 8.14 이상 또는 9.x |
-| Gradle | **9.8.x** | Java 25로 빌드하려면 Gradle 9.1 이상 필요 |
+| Gradle (Wrapper) | **9.8.0** | Java 25로 빌드하려면 Gradle 9.1 이상 필요. Initializr 기본값(9.7.1)에서 올림 |
+| foojay-resolver-convention | **1.0.0** | JDK 25가 없으면 Gradle toolchain이 자동으로 내려받게 한다 |
 | 내장 서버 | Tomcat 11.0.x (Servlet 6.1) | Spring Boot 4.1 기본값 |
+| Spring Security, Flyway, Testcontainers, PostgreSQL JDBC | Spring Boot 4.1.1이 관리 | 버전을 직접 적지 않고 Boot의 의존성 관리에 맡긴다. 서로 호환되는 조합이 보장된다 |
+| 로컬 DB, 테스트 DB 이미지 | **postgres:18** | `latest`를 쓰지 않고 고정 |
 | PostgreSQL | **18** | 2030-11까지 지원. JDBC 드라이버 버전은 Spring Boot가 관리 |
 | pgvector | AI 기능 착수 시 확정 | PostgreSQL 18 지원 버전 사용 |
 | Spring AI | AI 기능 착수 시 확정 | Spring Boot 4.1 호환 버전 사용 |
