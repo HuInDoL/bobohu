@@ -97,6 +97,14 @@ Geocoding 응답의 `roadAddress`와 `addressElements`(SIDO, SIGUGUN)는 이미 
 ### 5.4 정리 규칙은 계속 바뀐다
 원본(`address_raw`)을 보존하고 있으므로, 규칙을 고친 뒤 다시 처리할 수 있다. 정리 로직은 **입력 문자열만 받아 결과를 돌려주는 순수 함수**로 만들면 DB 없이 빠르게 테스트할 수 있다.
 
+### 5.5 검토한 대안: 네이버에서 보육원 데이터를 직접 가져오기 (채택 안 함)
+사용자 질문(2026-09-26): 공공데이터 대신 네이버 지도에서 보육원 데이터만 가져올 수는 없는가?
+- **NCP Maps에는 장소(POI) 검색이 없다.** 지도 표시, Geocoding, Reverse Geocoding, 길찾기 등만 제공한다.
+- **네이버 검색 API(지역 검색)는 한 번에 최대 5건, 다음 페이지 없음(start 최대 1), 하루 25,000회**로 제한된다. 전국 목록 수집에 쓸 수 없다.
+- 네이버 지도 웹 화면 크롤링은 이용약관 위반과 법적 위험이 있어 제외한다.
+- 데이터 성격도 다르다. 공공데이터는 **정식 신고 시설 목록**이고, 지도 장소 정보는 업체나 사용자가 등록한 것이라 누락이나 어린이집 혼입이 생길 수 있다. 후원 서비스의 신뢰 기준으로는 공식 목록이 맞다.
+- **결론**: 기준 목록은 공공데이터, 좌표와 표준 주소는 네이버 Geocoding, 세부 정보는 시설 담당자가 맡는다.
+
 ## 6. 구현 계획에서 정해야 할 것
 | # | 결정 사항 | 선택지 |
 |---|---|---|
@@ -115,6 +123,7 @@ Geocoding 응답의 `roadAddress`와 `addressElements`(SIDO, SIGUGUN)는 이미 
 ## 참고 자료
 - [NAVER Cloud Maps Geocoding API 문서](https://api.ncloud-docs.com/docs/application-maps-geocoding)
 - [주소기반산업지원서비스 (도로명주소 API)](https://business.juso.go.kr/)
+- [네이버 지역 검색 API 사용 예시와 제한 (velog)](https://velog.io/@cyseok123/Spring-%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%A7%80%EC%97%AD-%EA%B2%80%EC%83%89-API-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
 - [강원특별자치도 출범 (강원도민일보)](https://www.kado.net/news/articleView.html?idxno=1187659)
 - [전북특별자치도 출범으로 행정구역 명칭 변경 (전북특별자치도청)](https://www.jeonbuk.go.kr/newsroom/board/view.jeonbuk?boardId=BBS_0000090&menuCd=DOM_000001101000000000&paging=ok&startPage=1&dataSid=535135)
 - [군위군의 대구광역시 편입 (위키백과)](https://ko.wikipedia.org/wiki/%EA%B5%B0%EC%9C%84%EA%B5%B0%EC%9D%98_%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C_%ED%8E%B8%EC%9E%85)
