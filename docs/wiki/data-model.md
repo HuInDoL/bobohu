@@ -15,9 +15,9 @@
 | `facility_type` | `VARCHAR(30)` | X | 시설 유형 (아래 표) |
 | `type_confirmed` | `BOOLEAN` | X | 유형이 확인된 값인지 여부. 이름으로 추정한 값이면 `false` |
 | `address_raw` | `VARCHAR(300)` | X | 원본 주소. 정리 규칙이 틀렸을 때 다시 처리할 수 있게 보존한다 |
-| `address` | `VARCHAR(300)` | X | 정리한 주소 (Geocoding과 화면 표시에 사용) |
-| `sido` | `VARCHAR(20)` | O | 시·도 (예: 서울특별시). 주소에서 알아내지 못하면 NULL |
-| `sigungu` | `VARCHAR(30)` | O | 시·군·구 (예: 광진구) |
+| `address` | `VARCHAR(300)` | X | 정리한 주소 (Geocoding과 화면 표시에 사용). 시·도 공식 이름으로 시작하고 **건물번호까지만** 담는다. 동·호·층은 담지 않는다. 예: `서울특별시 중랑구 용마산로 271` |
+| `sido` | `VARCHAR(20)` | O | 시·도 공식 이름 (예: 서울특별시, 강원특별자치도). 주소에서 알아내지 못하면 NULL |
+| `sigungu` | `VARCHAR(30)` | O | 시·군·구 (예: 광진구). 일반구가 있는 시는 `천안시 동남구`처럼 함께 담는다. 세종특별자치시는 NULL |
 | `latitude` | `DOUBLE PRECISION` | O | 위도. Geocoding 전에는 NULL |
 | `longitude` | `DOUBLE PRECISION` | O | 경도. Geocoding 전에는 NULL |
 | `source` | `VARCHAR(30)` | X | 데이터 출처 (예: `MOHW_2022`, `MANAGER`) |
