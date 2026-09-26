@@ -13,6 +13,10 @@
 
 ## 이 프로젝트에서 사용한 방법
 - **버전**: Android SDK 3.24.0
+- **NCP 애플리케이션 등록** (2026-09-26)
+  - 서비스 환경의 Android 앱 패키지 이름: `com.bobohu`. 앱의 `applicationId`와 같아야 지도 인증이 통과한다.
+  - 웹 서비스 URL: 웹 개발(MVP 이후)을 시작할 때 추가한다.
+  - Geocoding은 서버가 Client ID와 Client Secret으로 호출하므로 서비스 환경 등록과 관계없다. **Client Secret은 코드와 git에 넣지 않고 `server/.env`에 둔다.**
 - **왜 네이버 지도인가**: 한국 사용자에게 가장 익숙한 지도이고, 국내 데이터 정확도가 높다.
 - **데이터 흐름 (계획)**: 보육원 주소 → 서버에서 Geocoding으로 좌표 변환 → DB 저장 → 앱이 API로 좌표를 받아 마커 표시
 - **Compose 연동**: SDK가 View 기반이라 `AndroidView`로 감싸서 쓴다. [Jetpack Compose](jetpack-compose.md) 참고.
