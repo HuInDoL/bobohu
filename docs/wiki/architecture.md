@@ -67,7 +67,7 @@ bobohu/
 │       │   └── domain/    # BaseTimeEntity (생성, 수정 시각)
 │       └── facility/
 │           └── domain/    # Facility, FacilityType, FacilityRepository
-├── android/           # Android 앱 (예정)
+├── android/           # Android 앱 (예정). applicationId: com.bobohu
 └── web/               # 웹 (예정)
 ```
 하나의 저장소에 서버, 앱, 웹을 함께 둔다(모노레포). 혼자 개발하므로 문서와 코드를 한곳에서 관리하는 편이 낫다.
