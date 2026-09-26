@@ -58,3 +58,6 @@
 ## [2026-09-26] tech | Android 패키지 이름 확정, NCP 애플리케이션 등록
 - Android applicationId를 `com.bobohu`로 확정 (NCP 서비스 환경에 등록)
 - 수정: tech/naver-maps.md, architecture.md
+
+## [2026-09-26] research | 작업 01 주소 정리: 코드 리서치
+- 추가: docs/work/01-address-normalization/research.md
