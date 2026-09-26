@@ -61,3 +61,6 @@
 
 ## [2026-09-26] research | 작업 01 주소 정리: 코드 리서치
 - 추가: docs/work/01-address-normalization/research.md
+
+## [2026-09-26] plan | 작업 01 주소 정리: 구현 계획
+- 추가: docs/work/01-address-normalization/plan.md
