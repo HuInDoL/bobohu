@@ -69,3 +69,6 @@
 - 추가: docs/work/01-address-normalization/feedback.md, implementation.md
 - 구현: Sido, NormalizedAddress, AddressNormalizer, 테스트 74개 (826건 중 819건 도로명 인식, 시·도와 시·군·구 100%)
 - 수정: data-model.md (address, sido, sigungu 형식), data-sources.md, work/01 research.md (경북 줄임 표기 정정)
+
+## [2026-09-26] feature | 작업 01 주소 정리 결과 확인용 시각화 페이지
+- claude.ai 비공개 Artifact로 게시. 기록: work/01 implementation.md 9장
